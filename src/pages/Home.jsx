@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion"; // Importing framer-motion
 import Profile from "../assets/profile.jpg";
-
+import Resume from "../assets/Villagonzalo_Mark_James_S..pdf";
 const Home = () => {
   const textArray = [
     "Ciao, sono Mark James!",
@@ -99,7 +99,9 @@ const Home = () => {
             </motion.h1>
             <div className="mt-8">
               <motion.a
-                href="resume.pdf"
+                href={Resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center px-6 py-3 text-lg text-white bg-accent hover:bg-secondary rounded-md transition duration-300 ease-in-out shadow-md"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
