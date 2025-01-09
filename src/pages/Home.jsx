@@ -54,12 +54,12 @@ const Home = () => {
   }, [charIndex, isDeleting, index, textArray]);
 
   return (
-    <section id="home" className="bg-background py-16 md:py-24">
+    <section id="home" className="bg-background py-16 md:py-24 mt-16">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
           {/* Profile Section (with new transition) */}
           <motion.div
-            className="w-full mb-8 md:w-1/2 md:mb-0"
+            className="w-full mb-8 md:w-1/2 md:mb-0 flex justify-center" // Added flex and justify-center for alignment
             initial={{ opacity: 0, x: -50 }} // Initial state
             animate={{ opacity: 1, x: 0 }} // Final state
             transition={{ duration: 1, delay: 0.2 }} // Animation duration and delay
@@ -67,7 +67,7 @@ const Home = () => {
             <img
               src={Profile}
               alt="Profile"
-              className="w-96 h-96 md:w-[500px] md:h-[500px] rounded-full mx-auto border-4 border-accent shadow-lg"
+              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[500px] md:h-[500px] rounded-full border-4 border-accent shadow-lg object-cover" // Adjusted width and height for responsiveness
             />
           </motion.div>
 

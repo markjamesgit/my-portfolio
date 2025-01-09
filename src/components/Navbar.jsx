@@ -6,10 +6,20 @@ const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(true);
 
   // Toggle the mobile menu visibility
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+    if (!isOpen) {
+      document.body.classList.add("overflow-hidden"); // Disable scrolling
+    } else {
+      document.body.classList.remove("overflow-hidden"); // Enable scrolling
+    }
+  };
 
   // Close the mobile menu when a menu item is clicked
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.classList.remove("overflow-hidden"); // Enable scrolling
+  };
 
   // Handle the scroll event
   const handleScroll = () => {
@@ -37,6 +47,13 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
+  // Cleanup body overflow class on component unmount
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, []);
 
   return (
     <nav
@@ -88,7 +105,7 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         } md:hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000]`}
       >
-        <div className="bg-background p-6 rounded-lg w-full h-full relative text-center">
+        <div className="bg-background p-6 w-full h-full relative text-center">
           <ul className="space-y-4 mt-60">
             <li className="text-text">
               <a href="#home" className="text-lg" onClick={() => closeMenu()}>
