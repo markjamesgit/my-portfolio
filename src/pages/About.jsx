@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaUsers, FaPalette } from "react-icons/fa";
-import { motion } from "framer-motion"; // Importing framer-motion
+import { motion } from "framer-motion";
 import Profile from "../assets/profile2.jpg";
 
 const About = () => {
-  const [inView, setInView] = useState(false); // Track if section is in view
-  const sectionRef = useRef(null); // Reference to the About section
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
 
   // Intersection Observer to trigger animation when the section is in view
   useEffect(() => {
@@ -15,7 +15,7 @@ const About = () => {
         setInView(entry.isIntersecting);
       },
       {
-        threshold: 0.5, // Trigger animation when 50% of the section is visible
+        threshold: 0.5,
       }
     );
 
@@ -34,21 +34,21 @@ const About = () => {
     <section
       id="about"
       className="bg-background py-16 md:py-24"
-      ref={sectionRef} // Attach ref to the About section
+      ref={sectionRef}
     >
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-12 md:space-x-12 md:space-y-0">
           {/* Left Column - Image Section */}
           <motion.div
             className="w-full md:w-5/12 relative"
-            initial={{ opacity: 0, x: -50 }} // Start hidden and off-screen to the left
+            initial={{ opacity: 0, x: -50 }}
             animate={{
-              opacity: inView ? 1 : 0, // Fade in based on inView state
-              x: inView ? 0 : -50, // Slide in from left
+              opacity: inView ? 1 : 0,
+              x: inView ? 0 : -50,
             }}
             transition={{
               duration: 1,
-              delay: 0.2, // Delay for the image animation
+              delay: 0.2,
             }}
           >
             <div className="w-full h-full rounded-xl overflow-hidden shadow-lg bg-gradient-to-r from-accent to-secondary">
@@ -57,7 +57,7 @@ const About = () => {
                 alt="Profile"
                 className="w-full h-[62vh] object-cover transform scale-110 transition-transform duration-500 hover:scale-125"
                 initial={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }} // Hover effect to scale the image
+                whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
               />
             </div>
@@ -70,14 +70,14 @@ const About = () => {
           {/* Right Column - Text Section */}
           <motion.div
             className="w-full md:w-7/12 space-y-8"
-            initial={{ opacity: 0, y: 50 }} // Start hidden and below the normal position
+            initial={{ opacity: 0, y: 50 }}
             animate={{
-              opacity: inView ? 1 : 0, // Fade in based on inView state
-              y: inView ? 0 : 50, // Slide up to normal position
+              opacity: inView ? 1 : 0,
+              y: inView ? 0 : 50,
             }}
             transition={{
               duration: 1,
-              delay: 0.4, // Delay for the text section
+              delay: 0.4,
             }}
           >
             <h2 className="text-4xl md:text-5xl font-extrabold text-accent mb-6">
@@ -86,14 +86,14 @@ const About = () => {
 
             <motion.p
               className="text-lg md:text-xl text-text leading-relaxed"
-              initial={{ opacity: 0, y: 20 }} // Start hidden and below
+              initial={{ opacity: 0, y: 20 }}
               animate={{
-                opacity: inView ? 1 : 0, // Fade in based on inView state
-                y: inView ? 0 : 20, // Slide up to normal position
+                opacity: inView ? 1 : 0,
+                y: inView ? 0 : 20,
               }}
               transition={{
                 duration: 1,
-                delay: 0.6, // Delay for the paragraph
+                delay: 0.6,
               }}
             >
               Hi, I'm Mark James, a 4th-year IT student at Bulacan State
@@ -108,14 +108,14 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div
                 className="p-6 bg-white rounded-lg shadow-md border-2 border-text"
-                initial={{ opacity: 0, scale: 0.9 }} // Start hidden and slightly smaller
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
-                  opacity: inView ? 1 : 0, // Fade in based on inView state
-                  scale: inView ? 1 : 0.9, // Scale to normal size
+                  opacity: inView ? 1 : 0,
+                  scale: inView ? 1 : 0.9,
                 }}
                 transition={{
                   duration: 0.8,
-                  delay: 0.8, // Delay for soft skills section
+                  delay: 0.8,
                 }}
               >
                 <h3 className="text-xl font-bold text-text mb-3 flex items-center">
@@ -129,11 +129,11 @@ const About = () => {
                   className="list-none pl-4 space-y-2 text-sm text-text"
                   initial={{ opacity: 0 }}
                   animate={{
-                    opacity: inView ? 1 : 0, // Fade in based on inView state
+                    opacity: inView ? 1 : 0,
                   }}
                   transition={{
                     duration: 0.6,
-                    delay: 1, // Delay for collaboration list
+                    delay: 1,
                   }}
                 >
                   <li>
@@ -145,14 +145,14 @@ const About = () => {
 
               <motion.div
                 className="p-6 bg-white rounded-lg shadow-md border-2 border-text"
-                initial={{ opacity: 0, scale: 0.9 }} // Start hidden and slightly smaller
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{
-                  opacity: inView ? 1 : 0, // Fade in based on inView state
-                  scale: inView ? 1 : 0.9, // Scale to normal size
+                  opacity: inView ? 1 : 0,
+                  scale: inView ? 1 : 0.9,
                 }}
                 transition={{
                   duration: 0.8,
-                  delay: 1.2, // Delay for adaptability list
+                  delay: 1.2,
                 }}
               >
                 <h3 className="text-xl font-bold text-text mb-3 flex items-center">
@@ -166,11 +166,11 @@ const About = () => {
                   className="list-none pl-4 space-y-2 text-sm text-text"
                   initial={{ opacity: 0 }}
                   animate={{
-                    opacity: inView ? 1 : 0, // Fade in based on inView state
+                    opacity: inView ? 1 : 0,
                   }}
                   transition={{
                     duration: 0.6,
-                    delay: 1.4, // Delay for design list
+                    delay: 1.4,
                   }}
                 >
                   <li>Proficient in Figma and design principles</li>

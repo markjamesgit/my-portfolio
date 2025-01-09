@@ -81,7 +81,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom - Copyright */}
         <div className="mt-12 text-center border-t border-primary pt-6 text-sm text-background ">
           <p>
             &copy; {new Date().getFullYear()} Mark James. All rights reserved.

@@ -8,14 +8,14 @@ const ScrollToTop = () => {
     const isAtBottom =
       window.innerHeight + window.scrollY >=
       document.documentElement.scrollHeight;
-    setIsVisible(isAtBottom); // Show the button when at the bottom
+    setIsVisible(isAtBottom);
   };
 
   // Scroll the page back to the top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Smooth scroll to top
+      behavior: "smooth",
     });
   };
 

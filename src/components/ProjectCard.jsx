@@ -1,31 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { motion } from "framer-motion"; // Importing framer-motion
+import { motion } from "framer-motion";
 
 const ProjectCard = ({ title, description, image, link, languages }) => {
-  const [inView, setInView] = useState(false); // State to track visibility
-  const cardRef = useRef(null); // Reference for the project card
+  const [inView, setInView] = useState(false);
+  const cardRef = useRef(null);
 
   // Intersection Observer setup
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        // Set inView to true when the card is in view
+
         setInView(entry.isIntersecting);
       },
       {
-        threshold: 0.5, // Trigger animation when 50% of the card is visible
+        threshold: 0.5,
       }
     );
 
     if (cardRef.current) {
-      observer.observe(cardRef.current); // Observe the project card
+      observer.observe(cardRef.current);
     }
 
     return () => {
       if (cardRef.current) {
-        observer.unobserve(cardRef.current); // Clean up observer
+        observer.unobserve(cardRef.current);
       }
     };
   }, []);
@@ -35,16 +35,16 @@ const ProjectCard = ({ title, description, image, link, languages }) => {
       ref={cardRef}
       className="bg-gradient-to-b from-background to-primary shadow-md rounded-lg overflow-hidden flex flex-col"
       initial={{
-        opacity: 0, // Initially hidden
-        y: 30, // Start position (below the normal position)
+        opacity: 0,
+        y: 30,
       }}
       animate={{
-        opacity: inView ? 1 : 0, // Fade in when in view
-        y: inView ? 0 : 30, // Slide up to normal position
+        opacity: inView ? 1 : 0,
+        y: inView ? 0 : 30,
       }}
       transition={{
         opacity: { duration: 0.5 },
-        y: { duration: 0.5, ease: "easeOut", delay: 0.2 }, // Slide-up with delay
+        y: { duration: 0.5, ease: "easeOut", delay: 0.2 },
       }}
     >
       {/* Project Image */}
