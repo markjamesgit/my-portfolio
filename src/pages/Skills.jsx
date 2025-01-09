@@ -34,8 +34,8 @@ const skillsData = [
 ];
 
 const Skills = () => {
-  const [inView, setInView] = useState(false); // State to track visibility
-  const sectionRef = useRef(null); // Reference for the skills section
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
 
   // Intersection Observer setup
   useEffect(() => {
@@ -46,27 +46,23 @@ const Skills = () => {
         setInView(entry.isIntersecting);
       },
       {
-        threshold: 0.5, // Trigger animation when 50% of the element is visible
+        threshold: 0.5,
       }
     );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current); // Observe the skills section
+      observer.observe(sectionRef.current);
     }
 
     return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current); // Clean up observer
+        observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
   return (
-    <section
-      id="skills"
-      className="bg-background py-16"
-      ref={sectionRef} // Attach ref to the section element
-    >
+    <section id="skills" className="bg-background py-16" ref={sectionRef}>
       <div className="container mx-auto px-6">
         <h2 className="text-5xl font-bold text-accent text-center mb-12">
           Skills
@@ -77,16 +73,16 @@ const Skills = () => {
               key={index}
               className="group relative flex flex-col items-center justify-center p-6 transition-transform hover:scale-105"
               initial={{
-                opacity: 0, // Initially hidden
-                y: 30, // Start position (below the normal position)
+                opacity: 0,
+                y: 30,
               }}
               animate={{
-                opacity: inView ? 1 : 0, // Fade in when in view
-                y: inView ? 0 : 30, // Slide up to normal position
+                opacity: inView ? 1 : 0,
+                y: inView ? 0 : 30,
               }}
               transition={{
                 opacity: { duration: 0.5 },
-                y: { duration: 0.5, ease: "easeOut", delay: index * 0.1 }, // Slide up effect with delay
+                y: { duration: 0.5, ease: "easeOut", delay: index * 0.1 },
               }}
             >
               <motion.img

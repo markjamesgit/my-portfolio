@@ -6,7 +6,7 @@ import {
   FaEnvelope,
   FaFileDownload,
 } from "react-icons/fa";
-import { motion } from "framer-motion"; // Importing framer-motion
+import { motion } from "framer-motion";
 import Profile from "../assets/profile.jpg";
 import Resume from "../assets/Villagonzalo_Mark_James_S..pdf";
 const Home = () => {
@@ -59,15 +59,15 @@ const Home = () => {
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
           {/* Profile Section (with new transition) */}
           <motion.div
-            className="w-full mb-8 md:w-1/2 md:mb-0 flex justify-center" // Added flex and justify-center for alignment
-            initial={{ opacity: 0, x: -50 }} // Initial state
-            animate={{ opacity: 1, x: 0 }} // Final state
-            transition={{ duration: 1, delay: 0.2 }} // Animation duration and delay
+            className="w-full mb-8 md:w-1/2 md:mb-0 flex justify-center"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
             <img
               src={Profile}
               alt="Profile"
-              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[500px] md:h-[500px] rounded-full border-4 border-accent shadow-lg object-cover" // Adjusted width and height for responsiveness
+              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[500px] md:h-[500px] rounded-full border-4 border-accent shadow-lg object-cover"
             />
           </motion.div>
 
@@ -78,14 +78,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 1,
-              delay: 0.4, // Adding slight delay to the text section
+              delay: 0.4,
             }}
           >
             <motion.p
               className="text-lg md:text-2xl font-medium text-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }} // Fade-in with delay
+              transition={{ duration: 1, delay: 0.6 }}
             >
               {currentText}
             </motion.p>
@@ -93,7 +93,7 @@ const Home = () => {
               className="text-3xl md:text-5xl font-extrabold text-accent mt-4 md:mt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }} // Fade-in with delay
+              transition={{ duration: 1, delay: 0.8 }}
             >
               Front-End Developer / Web Designer
             </motion.h1>
@@ -133,7 +133,7 @@ const Home = () => {
                   key={index}
                   href={social.href}
                   className="text-3xl md:text-4xl text-accent hover:text-secondary transition duration-300 ease-in-out"
-                  whileHover={{ scale: 1.2 }} // Hover effect
+                  whileHover={{ scale: 1.2 }}
                 >
                   {social.icon}
                 </motion.a>

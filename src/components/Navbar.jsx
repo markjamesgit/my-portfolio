@@ -9,16 +9,16 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
     if (!isOpen) {
-      document.body.classList.add("overflow-hidden"); // Disable scrolling
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove("overflow-hidden"); // Enable scrolling
+      document.body.classList.remove("overflow-hidden");
     }
   };
 
   // Close the mobile menu when a menu item is clicked
   const closeMenu = () => {
     setIsOpen(false);
-    document.body.classList.remove("overflow-hidden"); // Enable scrolling
+    document.body.classList.remove("overflow-hidden");
   };
 
   // Handle the scroll event
